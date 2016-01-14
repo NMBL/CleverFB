@@ -1,0 +1,33 @@
+  {
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+    "name": "CleverFB",
+    "description": "FaceBook chat on AutoPilot",
+    "version": "3.1",
+    "permissions": [
+      "activeTab",
+      "https://cleverbot.io/1.0/",
+      "http://cleverfb.mukulhase.com"
+    ],
+    "icons":{
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "browser_action": {
+      "default_icon": "icon.png",
+      "default_title": "CleverFB",
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["http://facebook.com/*"],
+        "js": ["jquery.min.js", "cleverbot.io.min.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      "pressEnter.js", "cleverbot.io.min.js", "jquery.min.js"
+    ],
+    "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+    "manifest_version": 2
+  }

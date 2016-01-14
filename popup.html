@@ -1,0 +1,84 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+<head>
+    <title>Clever FB</title>
+    <style>
+        ul
+        {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        li
+        {
+            cursor: pointer;
+            list-style-type: none;
+            white-space: nowrap;
+            border-top: 1px dashed #a5a4a1;
+        }
+
+        li ul
+        {
+            margin-left: 35px;
+        }
+
+        li li
+        {
+            cursor: default;
+            padding: 10px 15px;
+        }
+        body{
+            text-align: center;
+            min-width: 250px;
+            border-radius: 30px;
+            margin: 0px;
+            font-family: Segoe UI, Arial, sans-serif;
+            font-size: 13px;
+            color: #545454;
+            background-color: #f8f6f2;
+        }
+        #menu
+        {
+            margin-bottom: 10px;
+        }
+        .menu-item
+        {
+            padding: 10px 0px 10px 15px;
+        }
+
+        .menu-item:hover
+        {
+            background-color: #ece7df;
+        }
+        #share{
+            font-size: 1em;
+            text-align: center;
+        }
+        #sharebutton
+        {
+            width: 125px;
+            height: 2.1em;
+            border: 0;
+        }
+    </style>
+
+  </head>
+<body>
+    <h1>CleverFB</h1>
+    <ul id="menu">
+        <li id="toggle" class="menu-item">
+            Toggle On/Off
+        </li>
+        <li id="share" class="menu-item">
+            <span>If you like it, Please Share</span><iframe scrolling="no" frameborder="0" id="sharebutton" src="http://cleverfb.mukulhase.com"></iframe>
+        </li>
+    </ul>
+</body>
+<script src="popup.js"></script>
+</html>
+
