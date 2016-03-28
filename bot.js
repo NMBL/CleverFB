@@ -1,7 +1,5 @@
 var PollingRate = 2000;
-//Script to be injected into web page (to simulate pressing <enter> key)
-var s = document.createElement('script');
-s.src = chrome.extension.getURL('pressEnter.js');
+
 
 //Bot Toggling Mechanism
 if (typeof flag === 'undefined') {
@@ -52,7 +50,10 @@ function runBot(){
                     var usr = o[o.length - 1].innerText.toString();
                     bot.ask(usr, function (err, response) {
                         chatBox.value = response;
-                        console.log("still happening");
+                        console.log("responding");
+                        //Script to be injected into web page (to simulate pressing <enter> key)
+                        var s = document.createElement('script');
+                        s.src = chrome.extension.getURL('pressEnter.js');
                         (document.head || document.documentElement).appendChild(s);
                         state=0;
                     });
